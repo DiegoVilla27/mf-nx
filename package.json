@@ -1,0 +1,44 @@
+{
+  "name": "@mf-nx/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev:shell": "pnpm exec nx serve shell --devRemotes=mfeProducts,mfeUsers",
+    "dev:users": "pnpm exec nx serve mfeUsers",
+    "dev:products": "pnpm exec nx serve mfeProducts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~22.1.0",
+    "@angular-devkit/core": "~22.1.0",
+    "@angular-devkit/schematics": "~22.1.0",
+    "@angular/cli": "~22.1.0",
+    "@angular/compiler-cli": "~22.1.0",
+    "@angular/language-service": "~22.1.0",
+    "@module-federation/enhanced": "^2.1.0",
+    "@nx/js": "23.3.0",
+    "@nx/module-federation": "23.3.0",
+    "@nx/oxlint": "23.3.0",
+    "@nx/web": "23.3.0",
+    "@nx/webpack": "23.3.0",
+    "@nx/workspace": "23.3.0",
+    "@schematics/angular": "~22.1.0",
+    "@swc/helpers": "~0.5.18",
+    "nx": "23.3.0",
+    "oxlint": "^1.75.0",
+    "ts-node": "10.9.1",
+    "tslib": "^2.3.0",
+    "typescript": "~6.0.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@angular/common": "~22.1.0",
+    "@angular/compiler": "~22.1.0",
+    "@angular/core": "~22.1.0",
+    "@angular/forms": "~22.1.0",
+    "@angular/platform-browser": "~22.1.0",
+    "@angular/router": "~22.1.0",
+    "@nx/angular": "^23.3.0",
+    "rxjs": "~7.8.0"
+  }
+}

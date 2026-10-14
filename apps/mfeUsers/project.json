@@ -1,0 +1,111 @@
+{
+  "name": "mfeUsers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/mfeUsers/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/mfeUsers",
+        "index": "apps/mfeUsers/src/index.html",
+        "main": "apps/mfeUsers/src/main.ts",
+        "tsConfig": "apps/mfeUsers/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/mfeUsers/public"
+          }
+        ],
+        "styles": [
+          "apps/mfeUsers/src/styles.scss"
+        ],
+        "customWebpackConfig": {
+          "path": "apps/mfeUsers/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/mfeUsers/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201",
+        "headers": {
+          "Access-Control-Allow-Origin": "http://localhost:4200"
+        }
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "mfeUsers:build:production"
+        },
+        "development": {
+          "buildTarget": "mfeUsers:build:development"
+        }
+      },
+      "dependsOn": [
+        "shell:serve"
+      ]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mfeUsers:build"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "mfeUsers:build",
+        "port": 4201,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mfeUsers:build:development"
+        },
+        "production": {
+          "buildTarget": "mfeUsers:build:production"
+        }
+      }
+    }
+  }
+}
