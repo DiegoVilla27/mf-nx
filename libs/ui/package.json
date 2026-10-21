@@ -1,0 +1,16 @@
+{
+  "name": "@mf-nx/ui",
+  "version": "0.0.1",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./theme.css": "./src/theme.css"
+  },
+  "peerDependencies": {
+    "@angular/common": "^22.1.0",
+    "@angular/core": "^22.1.0"
+  },
+  "sideEffects": false
+}

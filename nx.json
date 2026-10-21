@@ -34,6 +34,16 @@
           "env": "NX_MF_DEV_REMOTES"
         }
       ]
+    },
+    "@nx/angular:package": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     }
   },
   "plugins": [
@@ -50,6 +60,18 @@
       "linter": "oxlint",
       "style": "scss",
       "unitTestRunner": "none"
+    },
+    "@nx/angular:library": {
+      "linter": "oxlint",
+      "unitTestRunner": "none"
+    },
+    "@nx/angular:component": {
+      "style": "css"
+    }
+  },
+  "release": {
+    "version": {
+      "preVersionCommand": "pnpm dlx nx run-many -t build"
     }
   }
 }

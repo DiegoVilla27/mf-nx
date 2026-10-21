@@ -24,11 +24,17 @@
     "@nx/workspace": "23.3.0",
     "@schematics/angular": "~22.1.0",
     "@swc/helpers": "~0.5.18",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.4.0",
+    "ng-packagr": "~22.1.0",
     "nx": "23.3.0",
     "oxlint": "^1.75.0",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^4.3.3",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "~6.0.3",
+    "verdaccio": "^6.3.2",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
@@ -40,5 +46,8 @@
     "@angular/router": "~22.1.0",
     "@nx/angular": "^23.3.0",
     "rxjs": "~7.8.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }
