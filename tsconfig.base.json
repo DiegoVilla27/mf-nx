@@ -23,6 +23,12 @@
       ],
       "mfeProducts/Routes": [
         "./apps/mfeProducts/src/app/remote-entry/entry.routes.ts"
+      ],
+      "@mf-nx/ui": [
+        "./libs/ui/src/index.ts"
+      ],
+      "@mf-nx/ui/*": [
+        "./libs/ui/src/*"
       ]
     }
   },

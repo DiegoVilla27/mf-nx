@@ -14,3 +14,7 @@ pnpm exec nx g @nx/angular:host --name=shell --directory=apps/shell --dynamic
 ## Instalar un Remote
 
 pnpm exec nx g @nx/angular:remote --name=mfeUsers --directory=apps/mfeUsers --host=shell
+
+## Crear una Lib
+
+pnpm exec nx g @nx/angular:lib --name=ui --directory=libs/ui --publishable --importPath=@mf-nx/ui
